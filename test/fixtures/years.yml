@@ -1,0 +1,17 @@
+# == Schema Information
+#
+# Table name: years
+#
+#  id         :integer(4)      not null, primary key
+#  year_no    :integer(4)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  year_no: 1
+
+two:
+  year_no: 1

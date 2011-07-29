@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100926184913) do
+ActiveRecord::Schema.define(:version => 20110729132623) do
 
   create_table "bids", :force => true do |t|
     t.integer  "team_id"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(:version => 20100926184913) do
     t.string   "name"
     t.text     "description"
     t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cashflows", :force => true do |t|
+    t.float    "roi"
+    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,6 +68,13 @@ ActiveRecord::Schema.define(:version => 20100926184913) do
     t.float    "cf4"
     t.float    "cf5"
     t.boolean  "show_cash_flow", :default => true
+  end
+
+  create_table "risk_factors", :force => true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "teams", :force => true do |t|
@@ -103,6 +117,12 @@ ActiveRecord::Schema.define(:version => 20100926184913) do
     t.integer  "year"
     t.string   "interest_type"
     t.float    "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "years", :force => true do |t|
+    t.integer  "year_no"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
