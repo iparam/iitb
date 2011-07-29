@@ -1,0 +1,53 @@
+# == Schema Information
+#
+# Table name: financial_positions
+#
+#  id                          :integer(4)      not null, primary key
+#  team_id                     :integer(4)
+#  year                        :integer(4)
+#  equity_from_last_year       :float
+#  debt_from_last_year         :float
+#  cash_inflow_during_year     :float
+#  cash_outflow                :float
+#  debt_repayment_during_year  :float
+#  new_debt_issued_during_year :float
+#  equity_at_end_of_year       :float
+#  debt_at_end_of_year         :float
+#  debt_to_equity_ratio        :float
+#  interest_rate_for_next_year :float
+#  wacc                        :float
+#  created_at                  :datetime
+#  updated_at                  :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  team_id: 1
+  year: 1
+  equity_from_last_year: 1.5
+  debt_from_last_year: 1.5
+  cash_inflow_during_year: 1.5
+  cash_outflow: 1.5
+  debt_repayment_during_year: 1.5
+  new_debt_issued_during_year: 1.5
+  equity_at_end_of_year: 1.5
+  debt_at_end_of_year: 1.5
+  debt_to_equity_ratio: 1.5
+  interest_rate_for_next_year: 1.5
+  wacc: 1.5
+
+two:
+  team_id: 1
+  year: 1
+  equity_from_last_year: 1.5
+  debt_from_last_year: 1.5
+  cash_inflow_during_year: 1.5
+  cash_outflow: 1.5
+  debt_repayment_during_year: 1.5
+  new_debt_issued_during_year: 1.5
+  equity_at_end_of_year: 1.5
+  debt_at_end_of_year: 1.5
+  debt_to_equity_ratio: 1.5
+  interest_rate_for_next_year: 1.5
+  wacc: 1.5

@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: bids
+#
+#  id         :integer(4)      not null, primary key
+#  team_id    :integer(4)
+#  project_id :integer(4)
+#  bid_amount :float
+#  winner     :boolean(1)      default(FALSE)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  team_id: 1
+  project_id: 1
+  bid_amount: 1.5
+  winner: false
+
+two:
+  team_id: 1
+  project_id: 1
+  bid_amount: 1.5
+  winner: false

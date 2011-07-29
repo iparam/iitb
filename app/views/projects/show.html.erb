@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+    
+<p>
+  <b>Name:</b>
+  <%= @project.name %><br/>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @project.description %><br/>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @project.cost %><br/>
+</p>
+
+<p>
+  <b>No of years:</b>
+  <%= @project.no_of_years %><br/>
+</p>
+<br />
+<% form_tag(add_bid_project_path(@project),:class=>'data-form1') do %>
+    <p>
+      <label>Bid Amount</label>
+      <%= text_field_tag :bid_amount %>
+      <%= submit_tag "Add Your Bid" %>
+    </p>
+<% end %>
+
+
+<div class="listing">
+  <table>
+    <thead>
+        <tr>
+          <th>Team</th>
+          <th>Bid Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @bids.each do |bid| %>
+            <tr>
+              <td><%= bid.team.name %></td>
+              <td><%= bid.bid_amount%></td>
+            </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+<% if is_admin? %>
+ <%= link_to 'Edit', edit_project_path(@project) %> |
+<% end %>
+<%= link_to 'Back', projects_path %>

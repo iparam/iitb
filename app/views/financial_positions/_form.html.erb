@@ -1,0 +1,69 @@
+<%= form_for(@financial_position) do |f| %>
+  <% if @financial_position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@financial_position.errors.count, "error") %> prohibited this financial_position from being saved:</h2>
+
+      <ul>
+      <% @financial_position.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :team_id %><br />
+    <%= f.text_field :team_id %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :equity_from_last_year %><br />
+    <%= f.text_field :equity_from_last_year %>
+  </div>
+  <div class="field">
+    <%= f.label :debt_from_last_year %><br />
+    <%= f.text_field :debt_from_last_year %>
+  </div>
+  <div class="field">
+    <%= f.label :cash_inflow_during_year %><br />
+    <%= f.text_field :cash_inflow_during_year %>
+  </div>
+  <div class="field">
+    <%= f.label :cash_outflow %><br />
+    <%= f.text_field :cash_outflow %>
+  </div>
+  <div class="field">
+    <%= f.label :debt_repayment_during_year %><br />
+    <%= f.text_field :debt_repayment_during_year %>
+  </div>
+  <div class="field">
+    <%= f.label :new_debt_issued_during_year %><br />
+    <%= f.text_field :new_debt_issued_during_year %>
+  </div>
+  <div class="field">
+    <%= f.label :equity_at_end_of_year %><br />
+    <%= f.text_field :equity_at_end_of_year %>
+  </div>
+  <div class="field">
+    <%= f.label :debt_at_end_of_year %><br />
+    <%= f.text_field :debt_at_end_of_year %>
+  </div>
+  <div class="field">
+    <%= f.label :debt_to_equity_ratio %><br />
+    <%= f.text_field :debt_to_equity_ratio %>
+  </div>
+  <div class="field">
+    <%= f.label :interest_rate_for_next_year %><br />
+    <%= f.text_field :interest_rate_for_next_year %>
+  </div>
+  <div class="field">
+    <%= f.label :wacc %><br />
+    <%= f.text_field :wacc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

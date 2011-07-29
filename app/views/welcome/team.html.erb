@@ -1,0 +1,70 @@
+
+<% if !is_admin? %>
+    <h1>Hello <%= current_team.name  %> </h1>
+    <h1>Your Bid to project</h1>
+    <div class="listing">
+      <table>
+        <thead>
+        <tr>
+          <th>Project</th>
+          <th>Bid Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @bids.each do |bid| %>
+            <tr>
+              <td><%= bid.project.name %></td>
+              <td><%= bid.bid_amount%></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+<% else %>
+    <div class="listing">
+      <table>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Qualify</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @teams.each do |team| %>
+            <tr>
+              <td> <%= team.name %></td>
+              <td></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+<% end %>
+<% content_for :sidebar do %>
+    <h2>Projects That You Have win </h2>
+    <br>
+    <% if !@projects.blank? %>
+        <div class="listing">
+          <table>
+            <thead>
+            <tr><th>Project Name</th>
+              <th>Bid AMount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @projects.each do |project| %>
+                <tr>
+                  <td><%= link_to project.name,project %></td>
+                  <td><%=  project.highest_bid_amount%></td>
+
+                </tr>
+
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+    <% end %>
+    <h2>Your Cash Available is <%= current_team.cash_available %></h2>
+    <br>
+    <h2>Your Net Amount  is <%= current_team.net_amount %></h2>
+<% end %>

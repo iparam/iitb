@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Team:</b>
+  <%= @financial_position.team_id %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @financial_position.year %>
+</p>
+
+<p>
+  <b>Equity from last year:</b>
+  <%= @financial_position.equity_from_last_year %>
+</p>
+
+<p>
+  <b>Debt from last year:</b>
+  <%= @financial_position.debt_from_last_year %>
+</p>
+
+<p>
+  <b>Cash inflow during year:</b>
+  <%= @financial_position.cash_inflow_during_year %>
+</p>
+
+<p>
+  <b>Cash outflow:</b>
+  <%= @financial_position.cash_outflow %>
+</p>
+
+<p>
+  <b>Debt repayment during year:</b>
+  <%= @financial_position.debt_repayment_during_year %>
+</p>
+
+<p>
+  <b>New debt issued during year:</b>
+  <%= @financial_position.new_debt_issued_during_year %>
+</p>
+
+<p>
+  <b>Equity at end of year:</b>
+  <%= @financial_position.equity_at_end_of_year %>
+</p>
+
+<p>
+  <b>Debt at end of year:</b>
+  <%= @financial_position.debt_at_end_of_year %>
+</p>
+
+<p>
+  <b>Debt to equity ratio:</b>
+  <%= @financial_position.debt_to_equity_ratio %>
+</p>
+
+<p>
+  <b>Interest rate for next year:</b>
+  <%= @financial_position.interest_rate_for_next_year %>
+</p>
+
+<p>
+  <b>Wacc:</b>
+  <%= @financial_position.wacc %>
+</p>
+
+
+<%= link_to 'Edit', edit_financial_position_path(@financial_position) %> |
+<%= link_to 'Back', financial_positions_path %>

@@ -1,0 +1,27 @@
+<%= title("Transactions") %>
+<div class="listing">
+  <table>
+    <tr>
+      <th>Amount</th>
+      <th>Interest type</th>
+      <th>Year</th>
+      <!--<th></th>-->
+      <!--<th></th>-->
+      <!--<th></th>-->
+    </tr>
+
+    <% @transactions.each do |transaction| %>
+        <tr>
+          <td><%= transaction.amount %></td>
+          <td><%= transaction.interest_type %></td>
+          <td><%= transaction.year %></td>
+          <!--<td><%#= link_to 'Edit', edit_transaction_path(transaction) %></td>-->
+          <!--<td><%#= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete %></td>-->
+        </tr>
+    <% end %>
+  </table>
+</div>
+
+<br />
+
+<%= link_to 'New Transaction', new_transaction_path %>

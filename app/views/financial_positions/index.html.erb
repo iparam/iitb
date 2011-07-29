@@ -1,0 +1,47 @@
+<h1>Listing financial_positions</h1>
+
+<table>
+  <tr>
+    <th>Team</th>
+    <th>Year</th>
+    <th>Equity from last year</th>
+    <th>Debt from last year</th>
+    <th>Cash inflow during year</th>
+    <th>Cash outflow</th>
+    <th>Debt repayment during year</th>
+    <th>New debt issued during year</th>
+    <th>Equity at end of year</th>
+    <th>Debt at end of year</th>
+    <th>Debt to equity ratio</th>
+    <th>Interest rate for next year</th>
+    <th>Wacc</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @financial_positions.each do |financial_position| %>
+  <tr>
+    <td><%= financial_position.team_id %></td>
+    <td><%= financial_position.year %></td>
+    <td><%= financial_position.equity_from_last_year %></td>
+    <td><%= financial_position.debt_from_last_year %></td>
+    <td><%= financial_position.cash_inflow_during_year %></td>
+    <td><%= financial_position.cash_outflow %></td>
+    <td><%= financial_position.debt_repayment_during_year %></td>
+    <td><%= financial_position.new_debt_issued_during_year %></td>
+    <td><%= financial_position.equity_at_end_of_year %></td>
+    <td><%= financial_position.debt_at_end_of_year %></td>
+    <td><%= financial_position.debt_to_equity_ratio %></td>
+    <td><%= financial_position.interest_rate_for_next_year %></td>
+    <td><%= financial_position.wacc %></td>
+    <td><%= link_to 'Show', financial_position %></td>
+    <td><%= link_to 'Edit', edit_financial_position_path(financial_position) %></td>
+    <td><%= link_to 'Destroy', financial_position, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Financial position', new_financial_position_path %>

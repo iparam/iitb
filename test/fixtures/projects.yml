@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: projects
+#
+#  id             :integer(4)      not null, primary key
+#  name           :string(255)
+#  description    :text
+#  cost           :float
+#  no_of_years    :float
+#  created_at     :datetime
+#  updated_at     :datetime
+#  cf0            :float
+#  cf1            :float
+#  cf2            :float
+#  cf3            :float
+#  cf4            :float
+#  cf5            :float
+#  show_cash_flow :boolean(1)      default(TRUE)
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  cost: 1.5
+  no_of_years: 1.5
+
+two:
+  name: MyString
+  description: MyText
+  cost: 1.5
+  no_of_years: 1.5

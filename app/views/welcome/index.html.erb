@@ -1,0 +1,24 @@
+
+<p id="notice"><%= notice %></p>
+<% if is_authorize? %>
+    <div class="listing">
+      <table>
+        <thead>
+        <tr>
+          <th>Project</th>
+          <th>Cost</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @projects.each do |project| %>
+            <tr>
+              <td><%= link_to project.name,project %></td>
+              <td><%= link_to project.cost%></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+<% else %>
+    Please Register Or Qualify first
+<% end  %>

@@ -1,0 +1,37 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put,:class=>'data-form' }) do |f| %>
+    <%= devise_error_messages! %>
+    <p><%= f.label :name %><br />
+      <%= f.text_field :name %></p>
+    <p><%= f.label :email %><br />
+      <%= f.text_field :email %></p>
+    <p><%= f.label "Member 1 name" %><i>(leave blank if you don't want to change it Add Member Name)</i><br />
+      <%= f.text_field :member1 %></p>
+    <p><%= f.label "Email of member 1" %><br />
+      <%= f.text_field :email_id_1 %></p>
+    <p><%= f.label "Mobile no of member 1" %><br />
+      <%= f.text_field :mobile_1 %></p>
+    <p><%= f.label "Member 2" %><i>(leave blank if you don't want to change it Add Member Name)</i><br />
+      <%= f.text_field :member2 %></p>
+    <p><%= f.label "Email of member 2" %><br />
+      <%= f.text_field :email_id_2 %></p>
+    <p><%= f.label "Mobile no of member 2" %><br />
+      <%= f.text_field :mobile_2 %></p>
+    <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.password_field :password %></p>
+
+    <p><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></p>
+
+    <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password %></p>
+
+    <p><%= f.submit "Update" %></p>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+
+<%= link_to "Back", :back %>
