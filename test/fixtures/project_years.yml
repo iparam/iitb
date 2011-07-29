@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: project_years
+#
+#  id          :integer(4)      not null, primary key
+#  year_id     :integer(4)
+#  project_id  :integer(4)
+#  cashflow_id :integer(4)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  year_id: 1
+  project_id: 1
+  cashflow_id: 1
+
+two:
+  year_id: 1
+  project_id: 1
+  cashflow_id: 1

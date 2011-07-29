@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110729132623) do
+ActiveRecord::Schema.define(:version => 20110729142449) do
 
   create_table "bids", :force => true do |t|
     t.integer  "team_id"
@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(:version => 20110729132623) do
     t.datetime "updated_at"
   end
 
+  create_table "factors", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "financial_positions", :force => true do |t|
     t.integer  "team_id"
     t.integer  "year"
@@ -50,6 +55,21 @@ ActiveRecord::Schema.define(:version => 20110729132623) do
     t.float    "debt_to_equity_ratio"
     t.float    "interest_rate_for_next_year"
     t.float    "wacc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "project_factors", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "factor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "project_years", :force => true do |t|
+    t.integer  "year_id"
+    t.integer  "project_id"
+    t.integer  "cashflow_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -73,6 +93,13 @@ ActiveRecord::Schema.define(:version => 20110729132623) do
   create_table "risk_factors", :force => true do |t|
     t.string   "name"
     t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "risks", :force => true do |t|
+    t.integer  "factor_id"
+    t.integer  "year_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

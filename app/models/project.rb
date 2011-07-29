@@ -22,6 +22,11 @@ class Project < ActiveRecord::Base
   validates_presence_of :name,:cost
   validates_uniqueness_of :name
   has_many :bids,:dependent=>:destroy
+  has_many :project_factors,:dependent=>:destroy
+  has_many :factors,:through=>:project_factors
+  has_many :project_years,:dependent=>:destroy
+  has_many :years,:through=>:project_years
+  has_many :cashflows,:through=>:project_years
 
 
   def highest_bid

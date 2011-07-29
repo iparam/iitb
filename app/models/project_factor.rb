@@ -1,15 +1,15 @@
 # == Schema Information
 #
-# Table name: cashflows
+# Table name: project_factors
 #
 #  id         :integer(4)      not null, primary key
-#  roi        :float
 #  project_id :integer(4)
+#  factor_id  :integer(4)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
-class Cashflow < ActiveRecord::Base
- has_one :project_factor
- has_many :projects ,:through=>:project_factor
+class ProjectFactor < ActiveRecord::Base
+ belongs_to :factor
+ belongs_to :project
 end
