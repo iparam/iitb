@@ -90,13 +90,12 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     if params["bid_amount"].to_f != 0.0
       @bid = current_team.bids.new(:project_id=>@project.id,:bid_amount=>params["bid_amount"].to_f)
-      if !BidValidator.is_valid_bid?(@bid)
-
+      if BidValidator.is_valid_bid?(@bid)
         if @bid.save
           message ="Bid is created"
         end
       else
-        message ="You have reach maximmum no of bid"
+        message =BidValidator.bid_message(@bid)
       end
     else
       message = "Please ensure bid amount is not blank and it contains number"
