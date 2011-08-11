@@ -54,5 +54,6 @@ class Team < ActiveRecord::Base
 
   validates :email_id_1,  :uniqueness => true, :allow_blank=>true,:email_format => true
   validates :email_id_2,  :uniqueness => true, :allow_blank=>true,:email_format => true
+  
 
 end

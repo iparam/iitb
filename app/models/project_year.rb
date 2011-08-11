@@ -13,4 +13,7 @@
 class ProjectYear < ActiveRecord::Base
  belongs_to :project
  belongs_to :year
-end
+ belongs_to :cashflow
+ validates_presence_of :project_id,:year_id
+ validates_uniqueness_of :year_id,:scope => :project_id
+	end

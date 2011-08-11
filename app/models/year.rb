@@ -11,5 +11,6 @@
 class Year < ActiveRecord::Base
   has_many :project_years,:dependent=>:destroy
   has_many :projects,:through=>:project_years
-has_many :risks
+  has_many :risks
+  validates_uniqueness_of :year_no
 end

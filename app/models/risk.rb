@@ -7,9 +7,11 @@
 #  year_id    :integer(4)
 #  created_at :datetime
 #  updated_at :datetime
+#  risk_value :float
 #
 
 class Risk < ActiveRecord::Base
   belongs_to :year
   belongs_to :factor
+  validates_presence_of :factor_id,:year_id,:risk_value
 end

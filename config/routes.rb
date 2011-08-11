@@ -7,6 +7,7 @@ IitbDemo::Application.routes.draw do
     member do
       post :add_bid
       get :complete_bid
+      post :add_cashflow
     end
   end
   match '/team'=>"welcome#team"
@@ -14,7 +15,13 @@ IitbDemo::Application.routes.draw do
   resources :bulletins
   resources :financial_positions
   resources :transactions
-
+  resources :settings do
+   collection do
+    post :add_year
+    post :add_factor
+    post :add_risk
+   end
+  end
   devise_for :teams
   # resources :teams,:as=>"account""
   root :to => "welcome#index"

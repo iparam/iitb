@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
-  # GET /projects
-  # GET /projects.xml
-  before_filter :logged_in_as_admin,:only=>[:new,:edit,:create,:update]
+
+  before_filter :logged_in_as_admin,:only=>[:new,:edit,:create,:update,:add_cashflow]
   def index
     @projects = Project.all
 
@@ -11,12 +10,12 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/1
-  # GET /projects/1.xml
   def show
     @project = Project.find(params[:id])
     if is_admin?
       @bids = @project.bids.order("bid_amount DESC")
+      @cashflows = @project.cashflows
+       @years = Year.all 
     else
       @bids =  current_team.bids.where(:project_id =>params[:id]).order("bid_amount DESC")
     end
@@ -26,8 +25,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/new
-  # GET /projects/new.xml
   def new
     @project = Project.new
 
@@ -42,8 +39,6 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  # POST /projects
-  # POST /projects.xml
   def create
     @project = Project.new(params[:project])
 
@@ -108,5 +103,13 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.add_winner
     redirect_to projects_path
+  end
+  def add_cashflow
+    @project = Project.find(params[:id])
+    @cashflow = Cashflow.new(:project_id=>@project.id,:roi=>params[:roi])
+    if @cashflow.save
+      @project_year = @project.project_years.create(:year_id=>params[:year],:cashflow_id=>@cashflow.id)
+    end
+   redirect_to project_path(@project)
   end
 end

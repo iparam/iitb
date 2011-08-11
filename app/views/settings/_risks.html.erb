@@ -1,0 +1,29 @@
+<h2> Factor</h2>
+<% form_tag(add_risk_settings_path,:class=>'data-form1') do%>
+ Year <%=select_tag :year,options_for_select(@years.collect{|year| [year.year_no,year.id]}) %>
+  Factor <%=select_tag :factor,options_for_select(@factors.collect{|factor| [factor.name,factor.id]}) %>
+  Risk Value <%= text_field_tag :risk_value %>
+ <%= submit_tag "Add Factor" %>
+<% end %>
+<div class="listing">
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Factor</th>
+      <th>Risk Value</th>
+      <th width="40"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @risks.each do |risk| %>
+      <tr>
+        <td><%= risk.year.year_no %></td>
+        <td><%= risk.factor.name %></td>
+        <td><%= risk.risk_value %></td>
+        <td></td>  
+      </tr>   
+    <% end %>
+  </tbody>
+</table>
+</div>

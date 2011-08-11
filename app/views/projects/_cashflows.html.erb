@@ -1,0 +1,25 @@
+<h2> Year</h2>
+<% form_tag(add_cashflow_project_path(@project)) do%>
+ Year <%=select_tag :year,options_for_select(@years.collect{|year| [year.year_no,year.id]}) %>
+ Cashflow <%=text_field_tag :roi%>
+ <%= submit_tag "Add Cashflow" %>
+<% end %>
+<div class="listing">
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Casgflow</th>
+      <th width="40"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cashflows.each do |cashflow| %>
+      <tr>
+        <td><%= cashflow.year_no %></td>
+        <td><%= cashflow.roi %></td>  
+      </tr>   
+    <% end %>
+  </tbody>
+</table>
+</div>

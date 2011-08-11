@@ -10,6 +10,9 @@
 #
 
 class Cashflow < ActiveRecord::Base
- has_one :project_factor
- has_many :projects ,:through=>:project_factor
+ has_one :project_year
+ belongs_to :project
+ has_one :year,:through=>:project_year
+delegate :year_no,:to=>:year,:allow_nil => true
+
 end

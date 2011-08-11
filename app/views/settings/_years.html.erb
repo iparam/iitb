@@ -1,0 +1,23 @@
+<h2> Year</h2>
+<% form_tag(add_year_settings_path) do%>
+ <%= text_field_tag :year_no %>
+ <%= submit_tag "Add Year" %>
+<% end %>
+<div class="listing">
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th width="40"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @years.each do |year| %>
+      <tr>
+        <td><%= year.year_no %></td>
+        <td></td>  
+      </tr>   
+    <% end %>
+  </tbody>
+</table>
+</div>

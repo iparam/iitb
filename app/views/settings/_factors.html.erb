@@ -1,0 +1,23 @@
+<h2> Factor</h2>
+<% form_tag(add_factor_settings_path,:class=>'data-form1') do%>
+ <%= text_area_tag :name,"",:rows=>2,:cols=>100 %>
+ <%= submit_tag "Add Factor" %>
+<% end %>
+<div class="listing">
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th width="40"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @factors.each do |factor| %>
+      <tr>
+        <td><%= factor.name %></td>
+        <td></td>  
+      </tr>   
+    <% end %>
+  </tbody>
+</table>
+</div>

@@ -49,5 +49,7 @@
 </div>
 <% if is_admin? %>
  <%= link_to 'Edit', edit_project_path(@project) %> |
+ 
+ <%= render :partial=>"cashflows" %>
 <% end %>
 <%= link_to 'Back', projects_path %>
