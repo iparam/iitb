@@ -1,0 +1,23 @@
+<h2> Risk factor</h2>
+<% form_tag(add_project_factor_project_path(@project)) do%>
+ Factor <%=select_tag :factor_id,options_for_select(@factors.collect{|factor| [factor.name,factor.id]}) %>
+ <%= submit_tag "Add Factor" %>
+<% end %>
+<div class="listing">
+<table>
+  <thead>
+    <tr>
+      <th>Fcator</th>
+      <th width="40"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @project_factors.each do |factor| %>
+      <tr>
+        <td><%= factor.name %></td>
+        <td></td>  
+      </tr>   
+    <% end %>
+  </tbody>
+</table>
+</div>

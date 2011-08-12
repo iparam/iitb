@@ -8,6 +8,7 @@ IitbDemo::Application.routes.draw do
       post :add_bid
       get :complete_bid
       post :add_cashflow
+       post :add_project_factor
     end
   end
   match '/team'=>"welcome#team"

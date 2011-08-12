@@ -15,6 +15,8 @@ class ProjectsController < ApplicationController
     if is_admin?
       @bids = @project.bids.order("bid_amount DESC")
       @cashflows = @project.cashflows
+       @factors = Factor.all
+      @project_factors = @project.factors  
        @years = Year.all 
     else
       @bids =  current_team.bids.where(:project_id =>params[:id]).order("bid_amount DESC")
@@ -111,5 +113,11 @@ class ProjectsController < ApplicationController
       @project_year = @project.project_years.create(:year_id=>params[:year],:cashflow_id=>@cashflow.id)
     end
    redirect_to project_path(@project)
+  end
+
+  def add_project_factor
+    @project = Project.find(params[:id])
+    @project.project_factors.create(:factor_id=>params[:factor_id])
+    redirect_to project_path(@project)
   end
 end

@@ -12,4 +12,6 @@
 class ProjectFactor < ActiveRecord::Base
  belongs_to :factor
  belongs_to :project
+ validates_presence_of :project_id,:factor_id
+ validates_uniqueness_of :factor_id,:scope=>:project_id
 end
